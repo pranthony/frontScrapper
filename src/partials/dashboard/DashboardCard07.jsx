@@ -1,10 +1,11 @@
 import React from 'react';
 
-function DashboardCard07() {
+function DashboardCard07(data) {
+  const header = ["Nombres", "linkedin", "Pais", "Other", "Education"]
   return (
     <div className="col-span-full xl:col-span-8 bg-white shadow-lg rounded-sm border border-slate-200">
       <header className="px-5 py-4 border-b border-slate-100">
-        <h2 className="font-semibold text-slate-800">Top Channels</h2>
+        <h2 className="font-semibold text-slate-800">Datos Recolectados</h2>
       </header>
       <div className="p-3">
 
@@ -14,26 +15,17 @@ function DashboardCard07() {
             {/* Table header */}
             <thead className="text-xs uppercase text-slate-400 bg-slate-50 rounded-sm">
               <tr>
-                <th className="p-2">
-                  <div className="font-semibold text-left">Source</div>
-                </th>
-                <th className="p-2">
-                  <div className="font-semibold text-center">Visitors</div>
-                </th>
-                <th className="p-2">
-                  <div className="font-semibold text-center">Revenues</div>
-                </th>
-                <th className="p-2">
-                  <div className="font-semibold text-center">Sales</div>
-                </th>
-                <th className="p-2">
-                  <div className="font-semibold text-center">Conversion</div>
-                </th>
+                {header.map((e,i)=>{
+                  return <th className="p-2" key={i}>
+                    <div className="font-semibold text-left">{e}</div>
+                  </th>;
+                })}
+                
               </tr>
             </thead>
             {/* Table body */}
             <tbody className="text-sm font-medium divide-y divide-slate-100">
-              {/* Row */}
+              {/* Use data here */}
               <tr>
                 <td className="p-2">
                   <div className="flex items-center">
@@ -58,6 +50,7 @@ function DashboardCard07() {
                 </td>
               </tr>
               {/* Row */}
+
               <tr>
                 <td className="p-2">
                   <div className="flex items-center">
